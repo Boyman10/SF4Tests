@@ -25,12 +25,12 @@ class ArticleController
     }
 
     /**
-     * @Route("/news/wh-ateroids-bacoin")
+     * @Route("/news/{slug}")
      */
-    public function show()
+    public function show($slug)
     {
 
-        return new Response("Wouuuh future page s good !!");
+        return new Response(sprintf("Wouuuh future page s good - %s",$slug));
     }
 
 }
