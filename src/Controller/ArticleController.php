@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
@@ -11,7 +12,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
  * Date: 10/04/18
  * Time: 10:57
  */
-class ArticleController
+class ArticleController extends AbstractController
 {
 
     /**
@@ -30,7 +31,12 @@ class ArticleController
     public function show($slug)
     {
 
-        return new Response(sprintf("Wouuuh future page s good - %s",$slug));
+
+
+        // After extending AbstractController, we use Twig
+        return $this->render('article/show.html.twig', [
+            'title' => ucwords(str_replace('-',' ', $slug)),
+        ]);
     }
 
 }
