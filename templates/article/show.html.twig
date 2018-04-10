@@ -1,2 +1,11 @@
 {# Yah comment #}
 <h1>{{ title }}</h1>
+
+<h2>Comments</h2>
+
+<ul>
+    {% for comment in comments %}
+    <li>{{ comment }}</li>
+
+    {% endfor %}
+</ul>
