@@ -38,7 +38,7 @@ class ArticleController extends AbstractController
 
         ];
 
-        dump($slug, $this);
+        //dump($slug, $this);
 
         // After extending AbstractController, we use Twig
         return $this->render('article/show.html.twig', [
